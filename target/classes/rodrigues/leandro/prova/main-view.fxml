@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rodrigues.leandro.prova.MainController">
+  <center>
+    <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="." BorderPane.alignment="CENTER">
+      <content>
+        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </content>
+    </ScrollPane>
+  </center>
+  <top>
+    <VBox maxHeight="60.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: darkgray;" BorderPane.alignment="CENTER">
+      <children>
+        <MenuBar>
+          <menus>
+            <Menu mnemonicParsing="false" text="_Arquivo">
+              <items>
+                <MenuItem onAction="#onAbrir" text="A_brir" />
+                <MenuItem onAction="#onSair" text="Sai_r" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="_Transformações">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onBrilho" text="Brilho" />
+                <MenuItem mnemonicParsing="false" onAction="#onMesclar" text="Mesclar Imagem" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+        <ToolBar minHeight="72.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: darkgray;" />
+        <Slider fx:id="brightnessSlider" min="-255" max="255" value="0" onMouseReleased="#onSliderChange" />
+      </children>
+    </VBox>
+  </top>
+</BorderPane>
